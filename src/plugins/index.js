@@ -8,7 +8,7 @@ import {
   enableElement,
 } from "./utils.js";
 
-export default {
+const VueDependentSelect = {
   install(Vue) {
     Vue.component("legacy-select", LegacySelect);
     Vue.component("shadowed-v-select", ShadowedVSelect);
@@ -62,3 +62,10 @@ export default {
     });
   },
 };
+
+export default VueDependentSelect
+
+// Automatic installation if Vue has been added to the global scope.
+if (typeof window !== 'undefined' && window.Vue) {
+  window.Vue.use(VueDependentSelect)
+}
