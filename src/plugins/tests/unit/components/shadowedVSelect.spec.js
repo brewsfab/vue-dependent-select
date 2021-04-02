@@ -1,13 +1,11 @@
 import { createLocalVue, mount } from "@vue/test-utils";
 import ShadowedVSelect from "../../../components/ShadowedVSelect.vue";
-import vSelect from "vue-select";
 
 describe("Test ShadowedVSelect component", () => {
   let wrapper;
 
   beforeEach(() => {
     const localVue = createLocalVue();
-    localVue.component("v-select", vSelect);
     wrapper = mount(ShadowedVSelect, {
       localVue,
     });

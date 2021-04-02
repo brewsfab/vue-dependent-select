@@ -1,6 +1,5 @@
 import { commonDirectiveTests } from "./commonSuiteImpl";
 import ShadowedVSelect from "../../../components/ShadowedVSelect.vue";
-import vSelect from "vue-select";
 
 const stringOptions = ["A", "B", "C"];
 
@@ -31,7 +30,6 @@ commonDirectiveTests(
   stringOptions,
   ShadowedVSelect,
   simpleImplementation,
-  [{ name: "v-select", comp: vSelect }]
 );
 
 // Tests implementation
@@ -40,7 +38,6 @@ commonDirectiveTests(
   dictOptions,
   ShadowedVSelect,
   simpleImplementation,
-  [{ name: "v-select", comp: vSelect }]
 );
 
 const customLabelDictOptions = [
@@ -69,5 +66,4 @@ commonDirectiveTests(
   customLabelDictOptions,
   ShadowedVSelect,
   customLabelOptionsImplementation,
-  [{ name: "v-select", comp: vSelect }]
 );

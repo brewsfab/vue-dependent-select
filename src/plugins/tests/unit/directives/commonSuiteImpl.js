@@ -1,13 +1,11 @@
 import { createLocalVue, mount } from "@vue/test-utils";
-import linkedSelectPlugin from "../../../index.js";
+import VueDependentSelect from "../../../index.js";
 
 export const commonDirectiveTests = (
   implementationName,
   options,
   component,
   componentImplementation,
-  addedComponents = null,
-  addedPlugins = null
 ) => {
   const setSelection = async function(Wrapper, pos = 0) {
     const options = Wrapper.findAll("option");
@@ -38,22 +36,7 @@ export const commonDirectiveTests = (
     beforeEach(async () => {
       const localVue = createLocalVue();
 
-      //Register additional plugins
-      if (addedPlugins && Array.isArray(addedPlugins)) {
-        addedPlugins.forEach((plugin) => {
-          // console.log('Adding PLUGINS')
-          localVue.use(plugin);
-        });
-      }
-
-      //Register additional components
-      if (addedComponents && Array.isArray(addedComponents)) {
-        addedComponents.forEach((comp) => {
-          localVue.component(comp.name, comp.comp);
-        });
-      }
-
-      localVue.use(linkedSelectPlugin);
+      localVue.use(VueDependentSelect);
 
       wrapper = mount(componentImplementation, {
         localVue,
