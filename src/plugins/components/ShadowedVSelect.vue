@@ -10,7 +10,13 @@
 </template>
 
 <script>
+
+import vSelect from 'vue-select'
+
 export default {
+    components:{
+        'v-select': vSelect
+    },
     name: "ShadowSelect",
     props:{
         options: {
@@ -111,3 +117,7 @@ export default {
 
 }
 </script>
+
+<style scoped>
+@import "./../../../node_modules/vue-select/dist/vue-select.css";
+</style>
