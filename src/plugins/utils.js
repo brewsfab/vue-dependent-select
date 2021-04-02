@@ -1,17 +1,14 @@
 const getActiveLinkedSelection = function(parents) {
   let activeParent;
   if (Array.isArray(parents)) {
-    activeParent = parents.find((el) => el)
+    activeParent = parents.find((el) => el);
   } else {
     activeParent = parents;
   }
-    return activeParent
+  return activeParent;
 };
 
 const getElement = function(e) {
-  // console.log("This is the element")
-  // console.log(e)
-  // console.log("End of the element")
   var el = e.nodeName == "SELECT" ? e : e.querySelector("select");
   return el;
 };

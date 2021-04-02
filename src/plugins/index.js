@@ -13,12 +13,10 @@ const VueDependentSelect = {
     Vue.component("legacy-select", LegacySelect);
     Vue.component("shadowed-v-select", ShadowedVSelect);
 
-
     let parentHasReset = false;
 
     Vue.directive("linked", {
-
-      bind: function(el, ) {
+      bind: function(el) {
         //Wrap the vnode here
         disableElement(el);
         resetElement(el);
@@ -63,9 +61,9 @@ const VueDependentSelect = {
   },
 };
 
-export default VueDependentSelect
+export default VueDependentSelect;
 
 // Automatic installation if Vue has been added to the global scope.
-if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.use(VueDependentSelect)
+if (typeof window !== "undefined" && window.Vue) {
+  window.Vue.use(VueDependentSelect);
 }
